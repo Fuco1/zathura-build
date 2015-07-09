@@ -1,0 +1,24 @@
+[submodule "zathura"]
+	path = zathura
+	url = git://pwmt.org/zathura.git
+	branch = develop
+[submodule "zathura-pdf-poppler"]
+	path = zathura-pdf-poppler
+	url = git://pwmt.org/zathura-pdf-poppler.git
+	branch = develop
+[submodule "girara"]
+	path = girara
+	url = git://pwmt.org/girara.git
+	branch = develop
+[submodule "zathura-djvu"]
+	path = zathura-djvu
+	url = git://pwmt.org/zathura-djvu.git
+	branch = develop
+[submodule "zathura-ps"]
+	path = zathura-ps
+	url = git://pwmt.org/zathura-ps.git
+	branch = develop
+[submodule "zathura-cb"]
+	path = zathura-cb
+	url = git://pwmt.org/zathura-cb.git
+	branch = develop
