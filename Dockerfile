@@ -9,7 +9,8 @@ RUN apt-get update && apt-get install -y \
     libpoppler-glib8 \
     libspectre1 \
     libsynctex-dev \
-    make
+    make \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY ./girara /girara
 COPY ./zathura /zathura
