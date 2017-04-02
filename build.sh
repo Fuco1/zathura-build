@@ -1,17 +1,17 @@
-compile () {
-  dir=$1
-  echo "Installing $dir"
-  cd $dir
-  target="$dir"-"$(git tag -l | tail -n 1)"
-  make COLOR=1
-  PREFIX="/usr/local/stow/$target" make install
-  cd /usr/local/stow
-  stow -v $target
-}
+#!/bin/bash
 
-(compile girara)
-(compile zathura)
-(compile zathura-pdf-poppler)
-(compile zathura-ps)
-(compile zathura-cb)
-(compile zathura-djvu)
+VERSION=$(cat VERSION)
+(cd zathura && git checkout $VERSION)
+
+docker build -f Dockerfile.build -t "fuco1/zathura-build:$VERSION" .
+
+docker run --rm \
+       -v "$(pwd)/girara":/girara \
+       -v "$(pwd)/zathura":/zathura \
+       -v "$(pwd)/zathura-cb":/zathura-cb \
+       -v "$(pwd)/zathura-djvu":/zathura-djvu \
+       -v "$(pwd)/zathura-pdf-poppler":/zathura-pdf-poppler \
+       -v "$(pwd)/zathura-ps":/zathura-ps \
+       "fuco1/zathura-build:$VERSION"
+
+docker build -f Dockerfile -t "fuco1/zathura:$VERSION" .

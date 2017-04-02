@@ -1,0 +1,20 @@
+FROM debian:jessie
+
+# TODO: install make to the run container
+RUN apt-get update && apt-get install -y \
+            build-essential \
+            gettext \
+            libarchive-dev \
+            libcairo-dev \
+            libdjvulibre-dev \
+            libgtk-3-dev \
+            libmagic-dev \
+            libpoppler-glib-dev \
+            libspectre-dev \
+            libsynctex-dev \
+            pkg-config
+
+COPY ./install.sh /install.sh
+
+ENTRYPOINT ["/bin/bash"]
+CMD ["/install.sh"]
