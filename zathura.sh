@@ -1,16 +1,15 @@
 #!/bin/bash
 
 VERSION=$(cat VERSION)
-file=$(readlink -f "$1")
-dir=$(dirname "$file")
-basename=$(basename "$file")
-config=$(readlink -f "$HOME/.config/zathura/zathurarc")
+FILE=$(readlink -f "$1")
+CONFIG=$(readlink -f "$HOME/.config/zathura/zathurarc")
 
 xhost local:docker
 
 docker run -ti --rm \
        -e DISPLAY=$DISPLAY \
        -v /tmp/.X11-unix:/tmp/.X11-unix \
-       -v "$config:/root/.config/zathura/zathurarc:ro" \
-       -v "$dir":/tmp/localdir:ro \
-       "fuco1/zathura:$VERSION" "/tmp/localdir/$basename"
+       -v "$CONFIG:/root/.config/zathura/zathurarc:ro" \
+       -v "$HOME/.local/share/zathura/:/root/.local/share/zathura/" \
+       -v "$FILE:$FILE:ro" \
+       "fuco1/zathura:$VERSION" "$FILE"
