@@ -6,7 +6,7 @@ CONFIG=$(readlink -f "$HOME/.config/zathura/zathurarc")
 
 xhost local:docker
 
-docker run -ti --rm \
+docker run --rm \
        -e DISPLAY=$DISPLAY \
        -v /tmp/.X11-unix:/tmp/.X11-unix \
        -v "$CONFIG:/root/.config/zathura/zathurarc:ro" \
