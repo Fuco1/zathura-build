@@ -1,6 +1,7 @@
 #!/bin/bash
 
-VERSION=$(cat VERSION)
+__DIR__=$(dirname $(readlink -f "$0"))
+VERSION=$(cat "${__DIR__}/VERSION")
 FILE=$(readlink -f "$1")
 CONFIG=$(readlink -f "$HOME/.config/zathura/zathurarc")
 
