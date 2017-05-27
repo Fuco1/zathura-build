@@ -4,6 +4,8 @@ This repository contains the complete setup for dockerizing [zathura](https://pw
 
 Available on the [hub](https://hub.docker.com/r/fuco1/zathura/).
 
+This project uses [build-base](https://github.com/Fuco1/build-base) structure.
+
 # Why?
 
 Various Linux distributions often update their packages slowly and so you end up running some old version.  With this setup I can build new version in matter of minutes (basically just run one command and wait).
