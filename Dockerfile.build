@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
             libsynctex-dev \
             pkg-config
 
-COPY ./install.sh /install.sh
+COPY ./docker-build.sh /docker-build.sh
 
 ENTRYPOINT ["/bin/bash"]
-CMD ["/install.sh"]
+CMD ["/docker-build.sh"]
