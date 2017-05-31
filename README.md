@@ -1,4 +1,4 @@
-# Dockerized zathura
+# Dockerized zathura [![Build Status](https://semaphoreci.com/api/v1/github-fuco1/zathura-build/branches/master/shields_badge.svg)](https://semaphoreci.com/github-fuco1/zathura-build)
 
 This repository contains the complete setup for dockerizing [zathura](https://pwmt.org/projects/zathura/), the most awesomest pdf browser ever.
 
