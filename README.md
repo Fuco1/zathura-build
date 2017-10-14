@@ -22,7 +22,7 @@ then use `zathura` as you normally would.  Passing the file as the second argume
 
 Assuming you `git clone`d this repository, run `git submodule update --init`.
 
-Then run `build.sh`.
+Then run `./build`.
 
 # The setup
 
